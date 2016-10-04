@@ -1,4 +1,4 @@
-deviceTypesCommon = require 'resin-device-types/common'
+deviceTypesCommon = require '@resin.io/device-types/common'
 { networkOptions, commonImg, instructions } = deviceTypesCommon
 
 BOARD_SHUTDOWN_ARTIK = 'The device has performed a shutdown. Press the power switch PWR SW to the off position.'
@@ -14,6 +14,7 @@ postProvisioningInstructions = [
 ]
 
 module.exports =
+	version: 1
 	slug: 'artik5'
 	aliases: [ 'artik5' ]
 	name: 'Samsung Artik 5'
@@ -51,8 +52,7 @@ module.exports =
 	configuration:
 		config:
 			partition:
-				primary: 4
-				logical: 1
+				primary: 1
 			path: '/config.json'
 
 	initialization: commonImg.initialization
